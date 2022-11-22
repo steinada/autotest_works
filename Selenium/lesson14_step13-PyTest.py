@@ -1,4 +1,5 @@
 import unittest
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -46,4 +47,4 @@ class TestRegistration(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    pytest.main()
