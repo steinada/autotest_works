@@ -7,12 +7,9 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    # список селекторов для полей ввода
-    selectors = ['.form-control[placeholder="Input your first name"]',
-                 '.form-control[placeholder="Input your last name"]', '.form-control[placeholder="Input your email"]']
-    # список данных для ввода
+    selectors = ['div.first_block .form-control.first',
+                 'div.first_block .form-control.second', 'div.first_block .form-control.third']
     data = ['Anna', 'Robert', 'fl@ir.o']
-    # цикл для прохода по селекторам и соответствующим данным для ввода
     for i in range(3):
         new_input = browser.find_element(By.CSS_SELECTOR, selectors[i])
         new_input.send_keys(data[i])
@@ -28,5 +25,4 @@ try:
     assert "Congratulations! You have successfully registered!" == welcome_text
 
 finally:
-    time.sleep(10)
     browser.quit()
